@@ -9,7 +9,6 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 
-
 @app.route("/", methods=["GET"])
 def home():
     return render_template("homepage.html")
@@ -23,7 +22,7 @@ def login():
         auth.store_in_session()
         user = get_current_user()
         user.store_in_session()
-        return redirect(url_for("homepage"))
+        return redirect(url_for("home"))
     return render_template("login.html", form=form)
 
 
@@ -39,9 +38,9 @@ def signup():
     if form.validate_on_submit():
         user = create_user(**form.data)
         user.store_in_session()
-        auth = access(**form.data)
-        auth.store_in_session()
-        return redirect(url_for("homepage"))
+        # auth = access(**form.data)
+        # auth.store_in_session()
+        return redirect(url_for("login"))
     return render_template("signup.html", form=form)
 
 

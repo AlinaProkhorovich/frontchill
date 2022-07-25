@@ -45,7 +45,7 @@ class RegisterUser(BaseModel):
 
 
 class Login(BaseModel):
-    username: str
+    email: str
     password: str
 
     class Config:
@@ -58,9 +58,4 @@ class Auth(StoreInSessionMixin, BaseModel):
 
 
 class User(StoreInSessionMixin, BaseModel):
-    username: str
     email: EmailStr
-
-    is_active: bool = True
-    is_superuser: bool = False
-    
