@@ -11,6 +11,7 @@ class EventForm(FlaskForm):
     place = StringField('place', validators=[DataRequired(), ])
     photo = FileField("photo", validators=[DataRequired(), ])
     price = StringField('price', validators=[DataRequired(), ])
+
     submit = SubmitField('Добавить мероприятие')
 
 
