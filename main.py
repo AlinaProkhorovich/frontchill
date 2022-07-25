@@ -33,8 +33,8 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
     form = RegisterUserForm()
     if form.validate_on_submit():
         user = create_user(**form.data)

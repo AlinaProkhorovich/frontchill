@@ -7,7 +7,7 @@ from events.models import Event, PlaceAdd, CommentAdd, CategoryAdd
 
 CREATE_EVENT = f"{Config.API_URL}/api/event/"
 CREATE_PLACE = f"{Config.API_URL}/api/place/"
-CREATE_CATEGORY = f"{Config.API_URL}/api/place/"
+CREATE_CATEGORY = f"{Config.API_URL}/api/category/"
 CREATE_COMMENT = f"{Config.API_URL}/comment/"
 
 
