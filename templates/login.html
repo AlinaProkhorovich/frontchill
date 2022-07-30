@@ -6,10 +6,15 @@
     <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
+
+
 <!--  <form method="POST" action="/signup">-->
 <form class = "box" action="{{ url_for('login') }}" method="POST">
+    <span>Chillax</span>
+    <h1>Login</h1>
   {{ form.hidden_tag() }}
-  {{ form.email }}
-  {{ form.password }}
-  {{ form.submit }}
+   <div>  {{ form.email }} </div>
+    <div>  {{ form.password }} </div>
+    <div>  {{ form.submit }} </div>
+
 </form>
