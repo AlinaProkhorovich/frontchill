@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField,  TextAreaField, DateTimeField, FileField
+from wtforms import StringField, SubmitField,  TextAreaField, DateTimeField, FileField,IntegerField
 from wtforms.validators import DataRequired
 
 
@@ -11,29 +11,12 @@ class EventForm(FlaskForm):
     place = StringField('place', validators=[DataRequired(), ])
     photo = FileField("photo", validators=[DataRequired(), ])
     price = StringField('price', validators=[DataRequired(), ])
+    age_limit = IntegerField ('Возрастное ограничение', validators=[DataRequired(), ])
 
     submit = SubmitField('Добавить мероприятие')
 
-
-
-class CategoryForm(FlaskForm):
-
-    name_category = StringField(' category', validators=[DataRequired(), ])
-
-    submit = SubmitField('Добавить категорию')
-
-
-class PlaceForm(FlaskForm):
-    category = StringField('category', validators=[DataRequired(), ])
-    event = StringField('Event', validators=[DataRequired(), ])
-    place = StringField('place', validators=[DataRequired(), ])
-    adress = StringField('place', validators=[DataRequired(), ])
-
-    submit = SubmitField('Добавить место проведения')
-
-
-class CommentForm(FlaskForm):
-    comment = StringField("Комментарий к мероприятию", validators=[DataRequired(), ])
-
-    submit = SubmitField("Оставить комментарий")
-
+#
+# class CommentForm(FlaskForm):
+#     comment = StringField("Комментарий к мероприятию", validators=[DataRequired(), ])
+#
+#     submit = SubmitField("Оставить комментарий")
